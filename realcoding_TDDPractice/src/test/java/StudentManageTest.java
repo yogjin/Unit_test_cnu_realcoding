@@ -74,5 +74,10 @@ public class StudentManageTest {
         Student student = new Student();
         assertThat(student.getGender(),is("Male"));
     }
-
+    @Test
+    public void isMatchNumber(){
+        Student student = new Student();
+        student.setNumber("201702015");
+        assertTrue(student.isMatchNumber("201702015"));
+    }
 }

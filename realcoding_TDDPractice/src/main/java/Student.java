@@ -42,5 +42,7 @@ public class Student {
         student.setName("김철수");
         students.add(student);
     }
-
+    public boolean isMatchNumber(String number){
+        return this.number == number;
+    }
 }
