@@ -5,6 +5,7 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
@@ -61,6 +62,17 @@ public class StudentManageTest {
         Student student= new Student();
         student.setNumber("201502099");
         assertThat(student.getName(),is("이현준"));
+    }
+    @Test
+    public void callStudentGender(){
+        Student student = mock(Student.class);
+        when(student.getGender()).thenReturn("Male");
+        assertThat(student.getGender(), is("Male"));
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ifFindNullGender(){
+        Student student = new Student();
+        assertThat(student.getGender(),is("Male"));
     }
 
 }
